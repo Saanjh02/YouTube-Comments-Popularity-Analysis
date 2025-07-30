@@ -1,7 +1,9 @@
 📊 YouTube Comments & Popularity Analysis
 
 Project Type: SQL Analytics
+
 Environment: SSMS (SQL Server Management Studio)
+
 Objective: To explore the relationship between video popularity and the nature of user-generated comments, including sentiment. The goal is to generate actionable insights for content creators and platform strategists.
 
 🧠 Project Overview
