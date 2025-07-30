@@ -1,9 +1,11 @@
 📊 YouTube Comments & Popularity Analysis
+
 Project Type: SQL Analytics
 Environment: SSMS (SQL Server Management Studio)
 Objective: To explore the relationship between video popularity and the nature of user-generated comments, including sentiment. The goal is to generate actionable insights for content creators and platform strategists.
 
 🧠 Project Overview
+
 This project analyzes YouTube video-level statistics and associated comment data. Using SQL, we explore how user engagement (views, likes, comments) aligns with audience reactions (comment sentiment, comment volume, top-liked comments). The insights help identify what types of content drive engagement and how users emotionally respond to it.
 
 📌 Business Questions & Analytical Focus
@@ -12,7 +14,8 @@ This project analyzes YouTube video-level statistics and associated comment data
 Consider analyzing by views, likes, and comments.
 Are there common patterns in topics or content types?
 
-```
+```sql
+
 SELECT 
     Keyword,
     COUNT(*) AS VideoCount,
@@ -26,9 +29,14 @@ WHERE Keyword IS NOT NULL AND Keyword <> ''
 GROUP BY Keyword
 ORDER BY PerformanceScore DESC;
 
+```
+
 /*2. Do videos with high engagement (likes/views/comments) tend to have more positive, negative, or neutral comments?
 Use average sentiment across comments per video.
 Do high-performing videos attract more extreme sentiment?*/
+
+```sql
+
 WITH AvgSentimentPerVideo AS (
     SELECT 
         video_id,
@@ -52,9 +60,14 @@ WHERE TRY_CAST(V.Likes AS FLOAT) IS NOT NULL
   AND TRY_CAST(V.Comments AS FLOAT) IS NOT NULL
 ORDER BY Views DESC;
 
+```
+
 /*3. What is the relationship between comment volume and comment sentiment?
 Do videos with more comments have more polarized (0 or 2) reactions?
 Are neutral comments more common on low-engagement videos?*/
+
+```sql
+
 WITH SentimentCounts AS (
     SELECT 
         video_id,
@@ -82,9 +95,14 @@ JOIN videos V ON V.video_id = SC.video_id
 WHERE TRY_CAST(V.Comments AS INT) IS NOT NULL
 ORDER BY V.Comments DESC;
 
+```
+
 /*4. Which videos have the most liked comments, and what is the sentiment of those top comments?
 Are the top-liked comments generally positive or critical?
 Do they align with the video's popularity? */
+
+```sql
+
 WITH TopLikedComment AS (
     SELECT 
         video_id,
@@ -110,9 +128,14 @@ JOIN videos V ON V.video_id = C.video_id
 WHERE C.rn = 1
 ORDER BY TRY_CAST(C.Likes AS INT) DESC;
 
+```
+
 /*5. What proportion of videos have disabled comments or hidden like counts?
 Do these videos still perform well in terms of views?
 Is there a trend by keyword or publishing date?*/
+
+```sql
+
 WITH VideoFlags AS (
     SELECT
         video_id,
@@ -154,8 +177,13 @@ SELECT
     AVG(CASE WHEN LikesHidden = 0 THEN Views END) AS AvgViews_LikesVisible
 FROM VideoFlags;
 
+```
+
 /*6. Are there keywords that consistently result in higher comment sentiment or more liked comments?
 Can creators use this insight to drive more engagement?*/
+
+```sql
+
 SELECT 
     V.Keyword,
     COUNT(DISTINCT V.video_id) AS NumVideos,
@@ -176,9 +204,14 @@ WHERE TRY_CAST(C.Sentiment AS FLOAT) IS NOT NULL
 GROUP BY V.Keyword
 ORDER BY AvgSentiment DESC;
 
+```
+
 /*7. How does the publication date relate to performance?
 Are newer videos trending better or worse than older ones?
 Does sentiment vary over time?*/
+
+```sql
+
 WITH MonthlyStats AS (
     SELECT 
         FORMAT(CAST(V.published_at AS DATETIME), 'yyyy-MM') AS PublishMonth,
@@ -200,4 +233,6 @@ WITH MonthlyStats AS (
 SELECT *
 FROM MonthlyStats
 ORDER BY PublishMonth;
+
+```
 
