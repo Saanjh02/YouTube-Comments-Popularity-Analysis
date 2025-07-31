@@ -238,3 +238,34 @@ ORDER BY PublishMonth;
 
 ```
 
+**🛠️ TOOLS USED**
+
+SSMS (SQL Server Management Studio)
+
+SQL queries with aggregation (GROUP BY), text search (LIKE, CHARINDEX), joins, and window functions.
+
+Sentiment data assumed from preprocessed values (0 = negative, 1 = neutral, 2 = positive).
+
+**📈 SAMPLE METRICS & OUTPUT EXAMPLES**
+
+Top Keywords by Views: ['tutorial', 'reaction', 'funny', 'DIY', 'news']
+
+Most Liked Comment Sentiment: Positive (e.g., "This changed my life!" or humorous replies)
+
+Disabled Comments Proportion: ~6% of total videos
+
+Average Sentiment for High vs Low Engagement Videos:
+
+High Engagement: Avg Sentiment ~ 1.52
+
+Low Engagement: Avg Sentiment ~ 1.01
+
+**✅ RECOMMENDATIONS FOR CONTENT CREATORS**
+
+Use emotionally engaging or trending keywords in titles and descriptions.
+
+Encourage interaction in comments; high-volume videos often have strong viewer reactions.
+
+Respond to and highlight positive comments to amplify community sentiment.
+
+Avoid disabling comments/likes unless necessary — open engagement drives visibility.
