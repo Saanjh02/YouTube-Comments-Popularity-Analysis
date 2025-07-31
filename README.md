@@ -1,12 +1,12 @@
-**📊** **YouTube Comments & Popularity Analysis**
+**📊** **YOUTUBE COMMENTS & POPULARITY ANALYSIS**
 
-**Project Type: SQL Analytics**
+**PROJECT TYPE: SQL Analytics**
 
-**Environment: SSMS (SQL Server Management Studio)**
+**ENVIRONMENT: SSMS (SQL Server Management Studio)**
 
-**Objective:** To explore the relationship between video popularity and the nature of user-generated comments, including sentiment. The goal is to generate actionable insights for content creators and platform strategists.
+**OBJECTIVE:** To explore the relationship between video popularity and the nature of user-generated comments, including sentiment. The goal is to generate actionable insights for content creators and platform strategists.
 
-**🧠 Project Overview**
+**🧠 PROJECT OVERVIEW**
 
 This project analyzes YouTube video-level statistics and associated comment data. Using SQL, we explore how user engagement (views, likes, comments) aligns with audience reactions (comment sentiment, comment volume, top-liked comments). The insights help identify what types of content drive engagement and how users emotionally respond to it.
 
