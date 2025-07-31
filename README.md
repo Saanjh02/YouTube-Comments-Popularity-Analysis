@@ -262,3 +262,29 @@ Use emotionally engaging or trending keywords in titles and descriptions.
 Encourage interaction in comments; high-volume videos often have strong viewer reactions.
 Respond to and highlight positive comments to amplify community sentiment.
 Avoid disabling comments/likes unless necessary — open engagement drives visibility.
+
+
+**HOW TO USE**
+
+
+**Clone the Repository:** Clone this repository to your local machine.
+
+**git clone https://github.com/Deepak Sharma/Library-System-Management---P2.git
+**
+
+**Set Up the Database:** Execute the SQL scripts in the database_setup.sql file to create and populate the database.
+
+**Run the Queries:** Use the SQL queries in the analysis_queries.sql file to perform the analysis.
+
+**Explore and Modify:** Customize the queries as needed to explore different aspects of the data or answer additional questions.
+
+
+**AUTHOR - SUNITA JANGID**
+
+This project showcases SQL skills essential for database management and analysis. For more content on SQL and data analysis, connect with me through the following:
+
+**LinkedIn:** Connect with me professionally
+
+**Email ID:** (jangidsunita8008@gmail.com)
+
+Thank you for your interest in this project!
